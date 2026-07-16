@@ -1,0 +1,24 @@
+{
+  "flag_dictionary": "DICT_5X5_100",
+  "comment": "Flags use a DIFFERENT dictionary from the ChArUco board (DICT_4X4_50, IDs 0-43) so detections can never collide. Each flag is a rigid strip with two markers; angle is measured from the line joining their centres (base -> tip). Mounting alignment is irrelevant (cancelled by session zero-reference); rigidity is everything.",
+  "board": {
+    "squares_x": 8,
+    "squares_y": 11,
+    "square_length_m": 0.015,
+    "marker_length_m": 0.011,
+    "dictionary": "DICT_4X4_50",
+    "legacy_pattern": true
+  },
+  "flags": {
+    "shaft":  { "id_base": 10, "id_tip": 11, "span_mm": 40, "marker_mm": 7 },
+    "clevis": { "id_base": 20, "id_tip": 21, "span_mm": 25, "marker_mm": 6 },
+    "jaw1":   { "id_base": 30, "id_tip": 31, "span_mm": 28, "marker_mm": 6 },
+    "jaw2":   { "id_base": 40, "id_tip": 41, "span_mm": 28, "marker_mm": 6 }
+  },
+  "joint_definitions": {
+    "comment": "Joint angles are differences of flag angles, signed per Figure 2.1.2 (positive CCW, top view, zero roll). Establish the sign mapping for YOUR camera orientation once per setup using a known small positive rotation, then set flip_sign accordingly.",
+    "theta_W":  { "moving": "clevis", "reference": "shaft" },
+    "theta_G1": { "moving": "jaw1",   "reference": "clevis" },
+    "theta_G2": { "moving": "jaw2",   "reference": "clevis" }
+  }
+}
