@@ -128,8 +128,9 @@ confidence.
   the existing message/topic conventions from there rather than inventing new.
 - Freeze the interface early so the (optional) scoring system can develop
   against a simulated/replayed publisher.
-- **OPEN: ROS2 distro** — check repo README / package.xml (Humble? Iron?
-  Jazzy?). Install the matching version in the on-site environment.
+- **ROS2 distro: Jazzy** (confirmed by Aban, 30 Jul 2026). LTS on Ubuntu
+  24.04, Python 3.12 — rclpy skeleton (ros2_tracker_node.py) and
+  ultralytics are both compatible; no code changes needed.
 
 ## 10. Environment
 
@@ -173,7 +174,7 @@ confidence.
 
 ## 13. OPEN items (resolve + update this file)
 
-- [ ] ROS2 distro name (repo README/package.xml).
+- [x] ROS2 distro: Jazzy (Aban, 30 Jul 2026) — see section 9.
 - [ ] GitHub push confirmed (local commit exists; remote unknown).
 - [ ] Working-distance recalibration not yet done → current `.npz` provisional.
 - [ ] Trial session not yet run → GT chain unproven on real end-to-end data.

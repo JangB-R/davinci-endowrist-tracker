@@ -4,10 +4,20 @@ Purpose: capture ~150–250 marker-free images of the Cadiere EndoWrist for
 fine-tuning the runtime segmentation model (classes: shaft, clevis, jaw1,
 jaw2). Rig-mounted, commanded poses. Roll held near zero (v1 constraint).
 
-Camera: iPhone 15 main lens, same setup as GT sessions. Demo camera is
-undecided — reserve a 30–50 image top-up session on the demo camera once
-chosen (fine-tune / test top-up). Do NOT treat the iPhone-only model as
-demo-ready until it is checked on the demo camera.
+Cameras (decided 27 Jul): demo camera = ELP USBFHD01M-SFV (1080p UVC,
+2.8–12 mm varifocal — lens set at working distance, focus/zoom rings TAPED,
+exposure locked, own ChArUco .npz).
+
+- If the ELP is mounted by capture day: shoot the MAJORITY of the set on
+  the ELP from the deployment viewpoint (zero train/deploy domain gap;
+  use capture_frames.py for keypress capture from the stream), PLUS an
+  iPhone minority subset (~30–40 images incl. the flag-robustness set) so
+  iPhone-domain evaluation frames (paired GT / inpainted) stay
+  in-distribution.
+- If the ELP is not yet available: capture on iPhone per the grid below —
+  do NOT delay capture waiting for hardware — and shoot a 30–50 image ELP
+  top-up + ~20 ELP test frames once mounted.
+- GT / evaluation sessions: always iPhone (metrology needs the resolution).
 
 ---
 

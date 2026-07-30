@@ -1,12 +1,11 @@
 r"""
 ros2_tracker_node.py -- ROS2 publishing wrapper around the tracker. SKELETON.
 
-Cannot run on the Windows dev machine (no ROS2). Finish ON-SITE after
-resolving two CLAUDE.md open items:
-  1. ROS2 distro (check README/package.xml in
-     abanmerali/daVinci-EndoWrist-Instrument-Control-System).
-  2. The repo's existing message/topic conventions -- adopt those instead of
-     the placeholders below if they differ.
+Cannot run on the Windows dev machine (no ROS2). Distro: JAZZY (confirmed
+by Aban, 30 Jul 2026 -- Ubuntu 24.04, Python 3.12). Remaining open item
+before finishing on-site: the xArm repo's existing message/topic
+conventions (abanmerali/daVinci-EndoWrist-Instrument-Control-System) --
+adopt those instead of the placeholders below if they differ.
 
 Placeholder interface (frozen field set, per CLAUDE.md section 9 -- angles +
 timestamp + per-angle confidence; theta_R present but confidence 0.0 in v1):
