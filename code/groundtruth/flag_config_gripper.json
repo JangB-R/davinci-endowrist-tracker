@@ -1,0 +1,23 @@
+{
+  "flag_dictionary": "DICT_5X5_100",
+  "comment": "GRIPPER-ONLY config for zero-wrist theta_G measurement. Identical to flag_config.json EXCEPT theta_G1/theta_G2 are referenced to the SHAFT axis, not the clevis. At zero wrist the shaft/collar/clevis axes coincide, and the shaft flag detects reliably where the clevis flag may not, so the shaft is the correct and robust reference here. Do NOT use this config for coupled (non-zero-wrist) gripper measurement.",
+  "board": {
+    "squares_x": 8,
+    "squares_y": 11,
+    "square_length_m": 0.015,
+    "marker_length_m": 0.011,
+    "dictionary": "DICT_4X4_50",
+    "legacy_pattern": true
+  },
+  "flags": {
+    "shaft":  { "id_base": 10, "id_tip": 11, "span_mm": 40, "marker_mm": 7 },
+    "clevis": { "id_base": 20, "id_tip": 21, "span_mm": 25, "marker_mm": 6 },
+    "jaw1":   { "id_base": 30, "id_tip": 31, "span_mm": 28, "marker_mm": 6 },
+    "jaw2":   { "id_base": 40, "id_tip": 41, "span_mm": 28, "marker_mm": 6 }
+  },
+  "joint_definitions": {
+    "comment": "theta_G referenced to SHAFT for zero-wrist measurement (see top comment). Jaw moving angles come from the silhouette line-fit via --jaw-csv, not from flags.",
+    "theta_G1": { "moving": "jaw1", "reference": "shaft" },
+    "theta_G2": { "moving": "jaw2", "reference": "shaft" }
+  }
+}

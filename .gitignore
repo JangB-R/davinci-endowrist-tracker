@@ -1,3 +1,47 @@
+# --- environments & caches ---
+.venv/
 __pycache__/
 *.pyc
-data/raw/scratch_test/
+
+# --- datasets & captures (large / private lab images) ---
+data/
+Validating GT/
+code/calibration/calib_images/
+code/calibration/debug_output/
+code/groundtruth/sessions/
+
+# --- trained models & training runs (large binaries) ---
+*.pt
+runs/
+runs_v3/
+best_v3.pt
+
+# --- generated evaluation outputs & result CSVs (reproducible) ---
+code/tracker/eval*.csv
+code/tracker/eval*.png
+code/tracker/conf_vs_error_combined.png
+blockA_check.csv
+blockA_gt.csv
+blockB_gt.csv
+blockB_jaws.csv
+mount_validation.csv
+
+# --- image / QC artefacts ---
+code/groundtruth/photo*.jpeg
+code/groundtruth/photo*.png
+code/groundtruth/test*.JPG
+code/groundtruth/test*.png
+code/groundtruth/*_check.png
+code/groundtruth/*_bladefit.png
+code/groundtruth/inpaint_selftest_qc.png
+
+# --- large report assets (keep locally) ---
+Write up/Poster/*.pdf
+Write up/Poster/*.ppt
+
+# keep: code/*.py, *.json, flag_sheet.png, small .npz calibration files,
+#       CLAUDE.md, README.md, the report .docx
+
+# local-only (not for GitHub)
+CLAUDE.md
+Write up/
